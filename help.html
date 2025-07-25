@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощь - APISafe</title>
+    <meta name="description" content="Центр помощи APISafe - руководства, обучающие материалы и поддержка пользователей">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <a href="index.html">
+                        <i data-lucide="shield-check"></i>
+                        <span>ApiSafe</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html#features" class="nav-link">Возможности</a>
+                <a href="index.html#pricing" class="nav-link">Цены</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-primary">Попробовать бесплатно</button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Открыть меню">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Центр помощи</h1>
+                <p class="page-subtitle">Руководства, обучающие материалы и поддержка для эффективного использования APISafe</p>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <div class="breadcrumbs">
+                    <a href="index.html">Главная</a>
+                    <i data-lucide="chevron-right"></i>
+                    <span>Помощь</span>
+                </div>
+
+                <h2>Быстрый поиск помощи</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <h3>Чат поддержки</h3>
+                        <p>Получите мгновенную помощь через чат в панели управления</p>
+                        <p><strong>Доступен:</strong> 24/7</p>
+                        <a href="#" class="btn btn-primary">Открыть чат</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <h3>Email поддержка</h3>
+                        <p>Отправьте подробное описание вашего вопроса</p>
+                        <p><strong>Email:</strong> support@apisafe.io</p>
+                        <a href="mailto:support@apisafe.io" class="btn btn-secondary">Написать письмо</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3>Сообщество</h3>
+                        <p>Общайтесь с другими пользователями и получайте советы</p>
+                        <p><strong>Telegram:</strong> @apisafe_community</p>
+                        <a href="#" class="btn btn-secondary">Присоединиться</a>
+                    </div>
+                </div>
+
+                <h2>Популярные руководства</h2>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3><i data-lucide="play-circle"></i> Первые шаги</h3>
+                        <p>Создание аккаунта, добавление первого API-ключа и настройка интеграции с Make.com</p>
+                        <a href="#getting-started" class="link">Читать руководство →</a>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3><i data-lucide="zap"></i> Интеграция с Make.com</h3>
+                        <p>Пошаговое руководство по настройке и использованию APISafe в ваших сценариях</p>
+                        <a href="#make-integration" class="link">Читать руководство →</a>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3><i data-lucide="users"></i> Командная работа</h3>
+                        <p>Как пригласить коллег, настроить права доступа и организовать совместную работу</p>
+                        <a href="#team-work" class="link">Читать руководство →</a>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3><i data-lucide="shield"></i> Настройка безопасности</h3>
+                        <p>Двухфакторная аутентификация, управление сессиями и лучшие практики</p>
+                        <a href="#security-setup" class="link">Читать руководство →</a>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3><i data-lucide="code"></i> Использование API</h3>
+                        <p>Как получить API токен, делать запросы и интегрировать APISafe в ваши приложения</p>
+                        <a href="#api-usage" class="link">Читать руководство →</a>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3><i data-lucide="bar-chart"></i> Аналитика и мониторинг</h3>
+                        <p>Как отслеживать использование API-ключей и настроить уведомления</p>
+                        <a href="#analytics" class="link">Читать руководство →</a>
+                    </div>
+                </div>
+
+                <h2 id="getting-started">Первые шаги с APISafe</h2>
+                
+                <h3>Шаг 1: Создание аккаунта</h3>
+                <ol>
+                    <li>Перейдите на <a href="#" class="link">apisafe.io</a></li>
+                    <li>Нажмите кнопку "Попробовать бесплатно"</li>
+                    <li>Заполните форму регистрации:
+                        <ul>
+                            <li>Введите ваш email адрес</li>
+                            <li>Создайте надежный пароль (минимум 8 символов)</li>
+                            <li>Согласитесь с условиями использования</li>
+                        </ul>
+                    </li>
+                    <li>Подтвердите email через письмо</li>
+                    <li>Войдите в панель управления</li>
+                </ol>
+
+                <div class="info-box">
+                    <h4><i data-lucide="shield"></i> Рекомендация по безопасности</h4>
+                    <p>Сразу после регистрации настройте двухфакторную аутентификацию в разделе "Настройки" → "Безопасность".</p>
+                </div>
+
+                <h3>Шаг 2: Добавление первого API-ключа</h3>
+                <ol>
+                    <li>В панели управления нажмите кнопку <span class="code-inline">+ Добавить ключ</span></li>
+                    <li>Выберите тип сервиса из списка (например, "OpenAI API")</li>
+                    <li>Введите понятное название для ключа</li>
+                    <li>Вставьте ваш API-ключ в поле "Значение"</li>
+                    <li>Добавьте описание (опционально)</li>
+                    <li>Выберите проект или создайте новый</li>
+                    <li>Нажмите <span class="code-inline">Сохранить</span></li>
+                </ol>
+
+                <div class="info-box success">
+                    <h4><i data-lucide="check-circle"></i> Готово!</h4>
+                    <p>Ваш API-ключ зашифрован и безопасно сохранен. Теперь вы можете использовать его в интеграциях.</p>
+                </div>
+
+                <h2 id="make-integration">Интеграция с Make.com</h2>
+                
+                <h3>Подключение APISafe к Make.com</h3>
+                <ol>
+                    <li>В Make.com создайте новый сценарий</li>
+                    <li>Добавьте модуль и найдите "APISafe" в списке приложений</li>
+                    <li>Выберите действие "Get Secret Value"</li>
+                    <li>Нажмите "Create a connection"</li>
+                    <li>Введите ваш API токен APISafe:
+                        <ul>
+                            <li>Получите токен в APISafe: "Настройки" → "API токены"</li>
+                            <li>Нажмите "Создать новый токен"</li>
+                            <li>Скопируйте токен и вставьте в Make.com</li>
+                        </ul>
+                    </li>
+                    <li>Нажмите "Save" для сохранения подключения</li>
+                </ol>
+
+                <h3>Использование секретов в сценариях</h3>
+                <ol>
+                    <li>В настройках модуля APISafe выберите нужный проект</li>
+                    <li>Выберите секрет из списка</li>
+                    <li>Запустите модуль для получения значения</li>
+                    <li>Используйте полученное значение в других модулях</li>
+                </ol>
+
+                <div class="code-block">
+                    // Пример использования в HTTP модуле
+                    Headers:
+                    Authorization: Bearer {{1.value}}
+                    
+                    // Где {{1.value}} - это значение из модуля APISafe
+                </div>
+
+                <h2 id="team-work">Командная работа</h2>
+                
+                <h3>Приглашение участников</h3>
+                <ol>
+                    <li>Перейдите в раздел "Команда" в панели управления</li>
+                    <li>Нажмите кнопку "Пригласить участника"</li>
+                    <li>Введите email адрес коллеги</li>
+                    <li>Выберите роль:
+                        <ul>
+                            <li><strong>Администратор</strong> - полный доступ к управлению</li>
+                            <li><strong>Разработчик</strong> - создание и использование ключей</li>
+                            <li><strong>Наблюдатель</strong> - только просмотр статистики</li>
+                        </ul>
+                    </li>
+                    <li>Выберите проекты, к которым предоставить доступ</li>
+                    <li>Отправьте приглашение</li>
+                </ol>
+
+                <h3>Управление правами доступа</h3>
+                <p>Для каждого участника можно настроить детальные права:</p>
+                <ul>
+                    <li><strong>Просмотр секретов</strong> - видеть список и названия</li>
+                    <li><strong>Использование секретов</strong> - получать значения через API</li>
+                    <li><strong>Создание секретов</strong> - добавлять новые ключи</li>
+                    <li><strong>Редактирование секретов</strong> - изменять существующие</li>
+                    <li><strong>Удаление секретов</strong> - удалять ключи</li>
+                    <li><strong>Управление проектами</strong> - создавать и настраивать проекты</li>
+                </ul>
+
+                <h2 id="security-setup">Настройка безопасности</h2>
+                
+                <h3>Двухфакторная аутентификация (2FA)</h3>
+                <ol>
+                    <li>Перейдите в "Настройки" → "Безопасность"</li>
+                    <li>Нажмите "Включить 2FA"</li>
+                    <li>Отсканируйте QR-код приложением аутентификатора:
+                        <ul>
+                            <li>Google Authenticator</li>
+                            <li>Authy</li>
+                            <li>Microsoft Authenticator</li>
+                        </ul>
+                    </li>
+                    <li>Введите код из приложения для подтверждения</li>
+                    <li>Сохраните резервные коды в безопасном месте</li>
+                </ol>
+
+                <h3>Управление сессиями</h3>
+                <p>В разделе "Активные сессии" вы можете:</p>
+                <ul>
+                    <li>Просматривать все активные входы в аккаунт</li>
+                    <li>Видеть информацию об устройствах и местоположении</li>
+                    <li>Завершать подозрительные сессии</li>
+                    <li>Настраивать автоматическое завершение сессий</li>
+                </ul>
+
+                <h3>Уведомления о безопасности</h3>
+                <p>Настройте уведомления для получения информации о:</p>
+                <ul>
+                    <li>Входах с новых устройств</li>
+                    <li>Изменениях в настройках безопасности</li>
+                    <li>Подозрительной активности</li>
+                    <li>Доступе к критичным секретам</li>
+                </ul>
+
+                <h2 id="api-usage">Использование API</h2>
+                
+                <h3>Получение API токена</h3>
+                <ol>
+                    <li>Войдите в панель управления APISafe</li>
+                    <li>Перейдите в "Настройки" → "API токены"</li>
+                    <li>Нажмите "Создать новый токен"</li>
+                    <li>Задайте название токена</li>
+                    <li>Выберите права доступа:
+                        <ul>
+                            <li>Чтение секретов</li>
+                            <li>Создание секретов</li>
+                            <li>Редактирование секретов</li>
+                            <li>Удаление секретов</li>
+                        </ul>
+                    </li>
+                    <li>Скопируйте токен (показывается только один раз)</li>
+                </ol>
+
+                <h3>Базовый пример использования</h3>
+                <div class="code-block">
+                    // Получение секрета через API
+                    curl -X GET "https://api.apisafe.io/v1/secrets/secret_abc123" \
+                      -H "Authorization: Bearer YOUR_API_TOKEN" \
+                      -H "Content-Type: application/json"
+                </div>
+
+                <h3>Использование SDK</h3>
+                <div class="code-block">
+                    // JavaScript/Node.js
+                    import { APISafe } from '@apisafe/sdk';
+                    
+                    const client = new APISafe('your-api-token');
+                    const secret = await client.getSecret('secret_abc123');
+                    console.log(secret.value);
+                </div>
+
+                <h2 id="analytics">Аналитика и мониторинг</h2>
+                
+                <h3>Просмотр статистики использования</h3>
+                <p>В разделе "Аналитика" доступна информация о:</p>
+                <ul>
+                    <li>Общем количестве запросов к API-ключам</li>
+                    <li>Самых используемых секретах</li>
+                    <li>Активности по дням и часам</li>
+                    <li>Источниках запросов (интеграции)</li>
+                    <li>Ошибках и проблемах доступа</li>
+                </ul>
+
+                <h3>Настройка уведомлений</h3>
+                <ol>
+                    <li>Перейдите в "Настройки" → "Уведомления"</li>
+                    <li>Выберите события для уведомлений:
+                        <ul>
+                            <li>Превышение лимитов использования</li>
+                            <li>Ошибки доступа к секретам</li>
+                            <li>Подозрительная активность</li>
+                            <li>Изменения в команде</li>
+                        </ul>
+                    </li>
+                    <li>Настройте способы доставки:
+                        <ul>
+                            <li>Email уведомления</li>
+                            <li>Webhook'и</li>
+                            <li>Telegram бот</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2>Устранение проблем</h2>
+                
+                <h3>Частые проблемы и решения</h3>
+                
+                <div class="info-box warning">
+                    <h4><i data-lucide="alert-triangle"></i> Ошибка "Unauthorized" при API запросах</h4>
+                    <p><strong>Причины:</strong></p>
+                    <ul>
+                        <li>Неверный или истекший API токен</li>
+                        <li>Недостаточные права доступа</li>
+                        <li>Неправильный формат заголовка Authorization</li>
+                    </ul>
+                    <p><strong>Решение:</strong></p>
+                    <ul>
+                        <li>Проверьте правильность токена</li>
+                        <li>Убедитесь, что токен не истек</li>
+                        <li>Проверьте права доступа токена</li>
+                        <li>Используйте формат: <code>Authorization: Bearer YOUR_TOKEN</code></li>
+                    </ul>
+                </div>
+
+                <div class="info-box warning">
+                    <h4><i data-lucide="alert-triangle"></i> Интеграция с Make.com не работает</h4>
+                    <p><strong>Возможные причины:</strong></p>
+                    <ul>
+                        <li>Неправильно настроено подключение</li>
+                        <li>Секрет не найден или удален</li>
+                        <li>Превышен лимит API запросов</li>
+                    </ul>
+                    <p><strong>Решение:</strong></p>
+                    <ul>
+                        <li>Пересоздайте подключение в Make.com</li>
+                        <li>Проверьте существование секрета в APISafe</li>
+                        <li>Проверьте лимиты в разделе "Использование"</li>
+                    </ul>
+                </div>
+
+                <div class="info-box warning">
+                    <h4><i data-lucide="alert-triangle"></i> Не могу войти в аккаунт</h4>
+                    <p><strong>Если забыли пароль:</strong></p>
+                    <ul>
+                        <li>Нажмите "Забыли пароль?" на странице входа</li>
+                        <li>Введите ваш email</li>
+                        <li>Перейдите по ссылке в письме</li>
+                        <li>Создайте новый пароль</li>
+                    </ul>
+                    <p><strong>Если проблемы с 2FA:</strong></p>
+                    <ul>
+                        <li>Используйте резервные коды</li>
+                        <li>Обратитесь в поддержку для сброса 2FA</li>
+                    </ul>
+                </div>
+
+                <h2>Обучающие материалы</h2>
+                
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3><i data-lucide="video"></i> Видео уроки</h3>
+                        <p>Пошаговые видео руководства по всем функциям APISafe</p>
+                        <a href="#" class="link">Смотреть на YouTube →</a>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3><i data-lucide="calendar"></i> Вебинары</h3>
+                        <p>Еженедельные онлайн-сессии с экспертами по безопасности API</p>
+                        <a href="#" class="link">Расписание вебинаров →</a>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3><i data-lucide="book-open"></i> База знаний</h3>
+                        <p>Подробные статьи и руководства по всем аспектам использования</p>
+                        <a href="documentation.html" class="link">Открыть базу знаний →</a>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h3><i data-lucide="code"></i> Примеры кода</h3>
+                        <p>Готовые примеры интеграции для популярных языков программирования</p>
+                        <a href="#" class="link">GitHub репозиторий →</a>
+                    </div>
+                </div>
+
+                <h2>Связь с поддержкой</h2>
+                
+                <p>Если вы не нашли ответ на свой вопрос в этом центре помощи, обратитесь к нам любым удобным способом:</p>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i data-lucide="message-square"></i>
+                        </div>
+                        <h3>Система тикетов</h3>
+                        <p>Для сложных технических вопросов</p>
+                        <a href="#" class="btn btn-primary">Создать тикет</a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <h3>Телефонная поддержка</h3>
+                        <p>Для Enterprise клиентов</p>
+                        <p><strong>+7 (495) 123-45-67</strong></p>
+                        <p>Пн-Пт 9:00-18:00 МСК</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i data-lucide="send"></i>
+                        </div>
+                        <h3>Telegram поддержка</h3>
+                        <p>Быстрые ответы на простые вопросы</p>
+                        <a href="#" class="btn btn-secondary">@apisafe_support</a>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="faq.html" class="btn btn-primary btn-large">
+                        <i data-lucide="help-circle"></i>
+                        Посмотреть FAQ
+                    </a>
+                    <a href="contacts.html" class="btn btn-secondary btn-large" style="margin-left: 1rem;">
+                        <i data-lucide="phone"></i>
+                        Все контакты
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i data-lucide="shield-check"></i>
+                        <span>ApiSafe</span>
+                    </div>
+                    <p>Безопасное хранение API-ключей для no-code разработчиков</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Продукт</h4>
+                        <a href="features.html">Возможности</a>
+                        <a href="index.html#pricing">Цены</a>
+                        <a href="documentation.html">Документация</a>
+                        <a href="api.html">API</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Поддержка</h4>
+                        <a href="faq.html">FAQ</a>
+                        <a href="help.html">Помощь</a>
+                        <a href="#">Статус</a>
+                        <a href="contacts.html">Контакты</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Компания</h4>
+                        <a href="about.html">О нас</a>
+                        <a href="#">Блог</a>
+                        <a href="#">Карьера</a>
+                        <a href="#">Пресса</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ApiSafe. Все права защищены.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Политика конфиденциальности</a>
+                    <a href="terms.html">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
+

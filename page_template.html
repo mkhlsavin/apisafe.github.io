@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}} - APISafe</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <a href="index.html">
+                        <i data-lucide="shield-check"></i>
+                        <span>ApiSafe</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html#features" class="nav-link">Возможности</a>
+                <a href="index.html#pricing" class="nav-link">Цены</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-primary">Попробовать бесплатно</button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Открыть меню">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">{{PAGE_TITLE}}</h1>
+                <p class="page-subtitle">{{PAGE_SUBTITLE}}</p>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                {{CONTENT}}
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i data-lucide="shield-check"></i>
+                        <span>ApiSafe</span>
+                    </div>
+                    <p>Безопасное хранение API-ключей для no-code разработчиков</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Продукт</h4>
+                        <a href="features.html">Возможности</a>
+                        <a href="index.html#pricing">Цены</a>
+                        <a href="documentation.html">Документация</a>
+                        <a href="api.html">API</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Поддержка</h4>
+                        <a href="faq.html">FAQ</a>
+                        <a href="help.html">Помощь</a>
+                        <a href="#">Статус</a>
+                        <a href="contacts.html">Контакты</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Компания</h4>
+                        <a href="about.html">О нас</a>
+                        <a href="#">Блог</a>
+                        <a href="#">Карьера</a>
+                        <a href="#">Пресса</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ApiSafe. Все права защищены.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Политика конфиденциальности</a>
+                    <a href="terms.html">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuToggle && navMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
+

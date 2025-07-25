@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiSafe - Безопасное хранение API-ключей для no-code разработчиков</title>
+    <meta name="description" content="Первое решение для управления API-ключами, созданное специально для создателей ИИ-приложений и no-code автоматизации">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <i data-lucide="shield-check"></i>
+                    <span>ApiSafe</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">Возможности</a>
+                <a href="#pricing" class="nav-link">Цены</a>
+                <a href="faq.html" class="nav-link">FAQ</a>
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-primary">Попробовать бесплатно</button>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Открыть меню">
+                <i data-lucide="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Безопасное хранение <span class="highlight">API-ключей</span> для no-code разработчиков
+                    </h1>
+                    <p class="hero-subtitle">
+                        Первое решение для управления API-ключами, созданное специально для создателей ИИ-приложений и no-code автоматизации
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large" onclick="scrollToForm()">
+                            <i data-lucide="rocket"></i>
+                            Начать бесплатно
+                        </button>
+                        <button class="btn btn-secondary btn-large" onclick="openVideoModal()">
+                            <i data-lucide="play"></i>
+                            Посмотреть демо
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Разработчиков</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">API-ключей</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-illustration">
+                        <div class="api-keys-demo">
+                            <div class="api-key">
+                                <i data-lucide="key"></i>
+                                <span>OpenAI API</span>
+                                <div class="status secure">Защищено</div>
+                            </div>
+                            <div class="api-key">
+                                <i data-lucide="key"></i>
+                                <span>Telegram Bot</span>
+                                <div class="status secure">Защищено</div>
+                            </div>
+                            <div class="api-key">
+                                <i data-lucide="key"></i>
+                                <span>Make.com</span>
+                                <div class="status secure">Защищено</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Знакомая проблема?</h2>
+                <p class="section-subtitle">Большинство no-code разработчиков сталкиваются с этими вызовами</p>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i data-lucide="scatter-chart"></i>
+                    </div>
+                    <h3>API-ключи разбросаны везде</h3>
+                    <p>Ключи хранятся в десятках разных сервисов, заметках и файлах</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <h3>Небезопасное хранение</h3>
+                    <p>Ключи попадают в код, скриншоты и общие документы</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i data-lucide="users-x"></i>
+                    </div>
+                    <h3>Сложность командной работы</h3>
+                    <p>Трудно управлять доступами и отслеживать использование</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i data-lucide="user-x"></i>
+                    </div>
+                    <h3>Риск при смене сотрудников</h3>
+                    <p>Ключи остаются у бывших сотрудников</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ApiSafe решает все проблемы одним кликом</h2>
+                <p class="section-subtitle">Комплексное решение для безопасного управления API-ключами</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h3>Максимальная безопасность</h3>
+                    <p>Шифрование AES-256, SOC 2 соответствие, Zero Trust архитектура</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3>Простота использования</h3>
+                    <p>Настройка за 5 минут, интуитивный интерфейс, без технических знаний</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="link"></i>
+                    </div>
+                    <h3>Нативные интеграции</h3>
+                    <p>Прямая поддержка Make.com, Zapier, OpenAI и других популярных сервисов</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3>Командная работа</h3>
+                    <p>Управление доступами, ролями и разрешениями для всей команды</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="refresh-cw"></i>
+                    </div>
+                    <h3>Автоматизация</h3>
+                    <p>Автоматическая ротация ключей, мониторинг использования, алерты</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="activity"></i>
+                    </div>
+                    <h3>Аналитика</h3>
+                    <p>Детальная статистика использования, audit logs, отчеты безопасности</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Три простых шага к безопасности</h2>
+                <p class="section-subtitle">Начните защищать свои API-ключи уже сегодня</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Добавьте ключи</h3>
+                        <p>Импортируйте существующие API-ключи или создайте новые в безопасном хранилище</p>
+                    </div>
+                    <div class="step-visual">
+                        <i data-lucide="upload"></i>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Настройте интеграции</h3>
+                        <p>Подключите ApiSafe к вашим no-code платформам одним кликом</p>
+                    </div>
+                    <div class="step-visual">
+                        <i data-lucide="settings"></i>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Работайте безопасно</h3>
+                        <p>Используйте API-ключи в своих автоматизациях без риска утечки</p>
+                    </div>
+                    <div class="step-visual">
+                        <i data-lucide="check-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="integrations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Работает с вашими любимыми инструментами</h2>
+                <p class="section-subtitle">Более 50 интеграций с популярными no-code платформами</p>
+            </div>
+            <div class="integrations-grid">
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i data-lucide="workflow"></i>
+                    </div>
+                    <span>Make.com</span>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <span>Zapier</span>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <span>OpenAI</span>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i data-lucide="send"></i>
+                    </div>
+                    <span>Telegram</span>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i data-lucide="table"></i>
+                    </div>
+                    <span>Airtable</span>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                    <span>Notion</span>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <span>Gmail</span>
+                </div>
+                <div class="integration-card">
+                    <div class="integration-logo">
+                        <i data-lucide="plus"></i>
+                    </div>
+                    <span>+40 еще</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Прозрачные цены для любой команды</h2>
+                <p class="section-subtitle">Начните бесплатно, масштабируйтесь по мере роста</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <div class="price">
+                            <span class="currency">₽</span>
+                            <span class="amount">0</span>
+                            <span class="period">/месяц</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> До 5 секретов</li>
+                        <li><i data-lucide="check"></i> 1 проект</li>
+                        <li><i data-lucide="check"></i> Базовые интеграции</li>
+                        <li><i data-lucide="check"></i> Community поддержка</li>
+                    </ul>
+                    <button class="btn btn-outline">Начать бесплатно</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Популярный</div>
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="price">
+                            <span class="currency">₽</span>
+                            <span class="amount">590</span>
+                            <span class="period">/месяц</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> До 50 секретов</li>
+                        <li><i data-lucide="check"></i> 3 проекта</li>
+                        <li><i data-lucide="check"></i> Все интеграции</li>
+                        <li><i data-lucide="check"></i> Email поддержка</li>
+                        <li><i data-lucide="check"></i> Командная работа (до 3 пользователей)</li>
+                    </ul>
+                    <button class="btn btn-primary">Выбрать план</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <div class="price">
+                            <span class="currency">₽</span>
+                            <span class="amount">1,100</span>
+                            <span class="period">/месяц</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i data-lucide="check"></i> Неограниченные секреты</li>
+                        <li><i data-lucide="check"></i> Неограниченные проекты</li>
+                        <li><i data-lucide="check"></i> Приоритетная поддержка</li>
+                        <li><i data-lucide="check"></i> Расширенная аналитика</li>
+                        <li><i data-lucide="check"></i> Автоматическая ротация</li>
+                    </ul>
+                    <button class="btn btn-outline">Выбрать план</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Часто задаваемые вопросы</h2>
+                <p class="section-subtitle">Ответы на самые популярные вопросы о ApiSafe</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Насколько безопасно хранение API-ключей в ApiSafe?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Мы используем шифрование AES-256, соответствуем стандарту SOC 2 Type II и применяем архитектуру Zero Trust. Ваши ключи защищены на уровне банковских систем.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Какие интеграции поддерживаются?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Мы поддерживаем более 50 популярных сервисов, включая Make.com, Zapier, OpenAI, Telegram, Airtable, Notion и многие другие. Список постоянно расширяется.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Можно ли использовать ApiSafe в команде?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, ApiSafe поддерживает командную работу с гибким управлением ролями и разрешениями. Вы можете контролировать, кто имеет доступ к каким ключам.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Как происходит миграция с других решений?</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Мы предоставляем инструменты для импорта ключей из популярных решений и персональную поддержку при миграции. Процесс обычно занимает менее часа.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Начните защищать свои API-ключи уже сегодня</h2>
+                <p class="cta-subtitle">Присоединяйтесь к разработчикам, которые доверяют ApiSafe</p>
+                
+                <form class="signup-form" id="signupForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Компания</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="usecase">Основной use case</label>
+                            <select id="usecase" name="usecase">
+                                <option value="">Выберите вариант</option>
+                                <option value="automation">Автоматизация процессов</option>
+                                <option value="ai-apps">ИИ-приложения</option>
+                                <option value="integrations">Интеграции сервисов</option>
+                                <option value="team-work">Командная работа</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Расскажите о вашем проекте</label>
+                        <textarea id="message" name="message" rows="3" placeholder="Опишите, как планируете использовать ApiSafe..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i data-lucide="rocket"></i>
+                        Получить ранний доступ
+                    </button>
+                    <p class="form-note">
+                        Нажимая кнопку, вы соглашаетесь с <a href="privacy.html" class="link">политикой конфиденциальности</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i data-lucide="shield-check"></i>
+                        <span>ApiSafe</span>
+                    </div>
+                    <p>Безопасное хранение API-ключей для no-code разработчиков</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Продукт</h4>
+                        <a href="features.html">Возможности</a>
+                        <a href="#pricing">Цены</a>
+                        <a href="documentation.html">Документация</a>
+                        <a href="api.html">API</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Поддержка</h4>
+                        <a href="faq.html">FAQ</a>
+                        <a href="help.html">Помощь</a>
+                        <a href="#">Статус</a>
+                        <a href="contacts.html">Контакты</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Компания</h4>
+                        <a href="about.html">О нас</a>
+                        <a href="#">Блог</a>
+                        <a href="#">Карьера</a>
+                        <a href="#">Пресса</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ApiSafe. Все права защищены.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Политика конфиденциальности</a>
+                    <a href="terms.html">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+        <div class="video-modal-content" onclick="event.stopPropagation()">
+            <button class="video-modal-close" onclick="closeVideoModal()">
+                <i data-lucide="x"></i>
+            </button>
+            <video id="demoVideo" controls autoplay muted>
+                <source src="apisafe_demo.mp4" type="video/mp4">
+                Ваш браузер не поддерживает воспроизведение видео.
+            </video>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
