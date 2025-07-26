@@ -1,7 +1,36 @@
 // Initialize Lucide icons
 document.addEventListener('DOMContentLoaded', function() {
-    lucide.createIcons();
+    // Инициализация Lucide иконок
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
     
+    // Проверяем, есть ли якорь в URL для прокрутки к форме
+    if (window.location.hash === '#signupForm') {
+        setTimeout(() => {
+            scrollToForm();
+        }, 500); // Небольшая задержка для полной загрузки страницы
+    }
+    
+    // Адаптация модального окна при изменении размера экрана
+    window.addEventListener('resize', adaptModalToScreen);
+    window.addEventListener('orientationchange', function() {
+        setTimeout(adaptModalToScreen, 100);
+    });
+    
+    // Начальная адаптация
+    adaptModalToScreen();
+    
+    // Обработчик клика вне модального окна для закрытия
+    const modal = document.getElementById('videoModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeVideoModal();
+            }
+        });
+    }
+
     // Initialize all interactive components
     initFAQ();
     initSmoothScrolling();
@@ -56,16 +85,75 @@ function initSmoothScrolling() {
     });
 }
 
-// Scroll to form function
+// Функция для плавной прокрутки к форме или перенаправления на главную страницу
 function scrollToForm() {
-    const form = document.getElementById('signupForm');
-    const headerHeight = document.querySelector('.header').offsetHeight;
-    const targetPosition = form.offsetTop - headerHeight - 20;
+    // Проверяем, есть ли форма на текущей странице
+    const form = document.querySelector('#signupForm, .signup-form, form[name="signupForm"]');
     
-    window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-    });
+    if (form) {
+        // Если форма найдена на текущей странице, прокручиваем к ней
+        form.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'center'
+        });
+        
+        // Устанавливаем фокус на первое поле формы после прокрутки
+        setTimeout(() => {
+            focusFirstFormField(form);
+        }, 800); // Задержка для завершения анимации прокрутки
+        
+    } else {
+        // Если формы нет, перенаправляем на главную страницу с якорем к форме
+        if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+            window.location.href = 'index.html#signupForm';
+        } else {
+            // Если мы уже на главной странице, но форма не найдена, попробуем найти её по другим селекторам
+            const fallbackForm = document.querySelector('form, .form-container, #contact-form');
+            if (fallbackForm) {
+                fallbackForm.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Устанавливаем фокус на первое поле fallback формы
+                setTimeout(() => {
+                    focusFirstFormField(fallbackForm);
+                }, 800);
+            }
+        }
+    }
+}
+
+// Функция для установки фокуса на первое поле формы
+function focusFirstFormField(form) {
+    if (!form) return;
+    
+    // Ищем первое поле ввода в форме по приоритету
+    const firstField = form.querySelector('#name') || 
+                      form.querySelector('input[name="name"]') ||
+                      form.querySelector('input[type="text"]:first-of-type') ||
+                      form.querySelector('input[type="email"]:first-of-type') ||
+                      form.querySelector('input:not([type="hidden"]):not([type="submit"]):not([type="button"])') ||
+                      form.querySelector('textarea') ||
+                      form.querySelector('select');
+    
+    if (firstField) {
+        // Устанавливаем фокус на поле
+        firstField.focus();
+        
+        // Добавляем визуальный эффект для привлечения внимания
+        firstField.style.transition = 'box-shadow 0.3s ease, border-color 0.3s ease';
+        firstField.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.3)';
+        firstField.style.borderColor = '#3b82f6';
+        
+        // Убираем эффект через некоторое время
+        setTimeout(() => {
+            firstField.style.boxShadow = '';
+            firstField.style.borderColor = '';
+        }, 2000);
+    } else {
+        console.log('Первое поле формы не найдено');
+    }
 }
 
 // Form submission with Google Sheets integration
@@ -328,56 +416,93 @@ mobileMenuStyles.textContent = `
 `;
 document.head.appendChild(mobileMenuStyles);
 
-// Video Modal Functions
+// Функция для открытия видео модального окна - адаптивная версия
 function openVideoModal() {
     const modal = document.getElementById('videoModal');
     const video = document.getElementById('demoVideo');
     
-    modal.classList.add('show');
-    modal.style.display = 'flex';
-    
-    // Play video when modal opens
-    setTimeout(() => {
-        video.play().catch(e => {
-            console.log('Autoplay prevented:', e);
+    if (modal && video) {
+        // Показываем модальное окно с flex для правильного центрирования
+        modal.style.display = 'flex';
+        modal.classList.add('show');
+        
+        // Сбрасываем видео и запускаем воспроизведение
+        video.currentTime = 0;
+        video.play().catch(error => {
+            console.log('Автовоспроизведение заблокировано:', error);
         });
-    }, 300);
-    
-    // Prevent body scroll
-    document.body.style.overflow = 'hidden';
+        
+        // Блокируем прокрутку страницы
+        document.body.style.overflow = 'hidden';
+        
+        // Добавляем обработчик для закрытия по Escape
+        document.addEventListener('keydown', handleEscapeKey);
+        
+        // Фокус на модальном окне для доступности
+        modal.focus();
+    }
 }
 
+// Функция для закрытия видео модального окна
 function closeVideoModal() {
     const modal = document.getElementById('videoModal');
     const video = document.getElementById('demoVideo');
     
-    // Pause and reset video
-    video.pause();
-    video.currentTime = 0;
-    
-    modal.classList.remove('show');
-    
-    // Fade out animation
-    setTimeout(() => {
+    if (modal && video) {
+        // Скрываем модальное окно
         modal.style.display = 'none';
-    }, 300);
-    
-    // Restore body scroll
-    document.body.style.overflow = 'auto';
+        modal.classList.remove('show');
+        
+        // Останавливаем видео
+        video.pause();
+        video.currentTime = 0;
+        
+        // Восстанавливаем прокрутку страницы
+        document.body.style.overflow = '';
+        
+        // Удаляем обработчик Escape
+        document.removeEventListener('keydown', handleEscapeKey);
+    }
 }
 
-// Close modal on Escape key
-document.addEventListener('keydown', function(event) {
+// Обработчик нажатия Escape для закрытия модального окна
+function handleEscapeKey(event) {
     if (event.key === 'Escape') {
         closeVideoModal();
     }
-});
+}
 
-// Prevent video from playing when modal is not visible
-document.getElementById('demoVideo').addEventListener('play', function() {
+// Функция для определения типа устройства
+function getDeviceType() {
+    const width = window.innerWidth;
+    if (width <= 480) return 'mobile-small';
+    if (width <= 767) return 'mobile';
+    if (width <= 1199) return 'tablet';
+    if (width <= 1919) return 'desktop';
+    if (width <= 2559) return 'desktop-large';
+    return 'desktop-4k';
+}
+
+// Функция для адаптации модального окна под размер экрана
+function adaptModalToScreen() {
     const modal = document.getElementById('videoModal');
-    if (!modal.classList.contains('show')) {
-        this.pause();
+    const modalContent = modal?.querySelector('.video-modal-content');
+    
+    if (modal && modalContent) {
+        const deviceType = getDeviceType();
+        
+        // Добавляем класс устройства для дополнительной стилизации
+        modal.className = modal.className.replace(/device-\w+/g, '');
+        modal.classList.add(`device-${deviceType}`);
+        
+        // Логирование для отладки
+        console.log(`Устройство: ${deviceType}, Размер экрана: ${window.innerWidth}x${window.innerHeight}`);
     }
-});
+}
 
+// Экспорт функций для глобального использования
+window.scrollToForm = scrollToForm;
+window.openVideoModal = openVideoModal;
+window.closeVideoModal = closeVideoModal;
+window.getDeviceType = getDeviceType;
+window.adaptModalToScreen = adaptModalToScreen;

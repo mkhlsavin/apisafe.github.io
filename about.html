@@ -30,7 +30,7 @@
                 <a href="contacts.html" class="nav-link">Контакты</a>
             </div>
             <div class="nav-actions">
-                <button class="btn btn-primary">Попробовать бесплатно</button>
+                <button class="btn btn-primary" onclick="scrollToForm()">Попробовать бесплатно</button>
             </div>
             <button class="mobile-menu-toggle" aria-label="Открыть меню">
                 <i data-lucide="menu"></i>
@@ -114,26 +114,10 @@
                     </div>
                     
                     <div class="timeline-item">
-                        <div class="timeline-date">Сентябрь 2024</div>
-                        <div class="timeline-content">
-                            <h3>Раунд инвестиций</h3>
-                            <p>Привлечение seed-раунда от ведущих венчурных фондов, специализирующихся на кибербезопасности и developer tools. Средства направлены на развитие продукта и расширение команды.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date">Декабрь 2024</div>
-                        <div class="timeline-content">
-                            <h3>Enterprise решения</h3>
-                            <p>Запуск корпоративных функций: SSO интеграция, on-premise развертывание, расширенный аудит. Первые крупные клиенты из Fortune 500 начали использовать APISafe для своих no-code инициатив.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
                         <div class="timeline-date">Январь 2025</div>
                         <div class="timeline-content">
                             <h3>Международная экспансия</h3>
-                            <p>Открытие офисов в Европе и соответствие GDPR. Локализация продукта на 5 языков. Партнерства с ведущими no-code платформами для глубокой интеграции.</p>
+                            <p>Открытие офиса в Европе и соответствие GDPR. Локализация продукта на 5 языков. Партнерства с no-code платформами для глубокой интеграции.</p>
                         </div>
                     </div>
                 </div>
@@ -200,9 +184,9 @@
                             <div class="member-photo">
                                 <i data-lucide="user"></i>
                             </div>
-                            <h3>Алексей Петров</h3>
+                            <h3>Михаил Савин</h3>
                             <p class="member-role">CEO & Co-founder</p>
-                            <p class="member-bio">15 лет в кибербезопасности, бывший технический директор в крупной финтех компании. Эксперт по защите критически важных систем.</p>
+                            <p class="member-bio">6 лет в кибербезопасности, бывший технический директор в крупной финтех компании. Эксперт по защите критически важных систем.</p>
                             <div class="member-social">
                                 <a href="#"><i data-lucide="linkedin"></i></a>
                                 <a href="#"><i data-lucide="twitter"></i></a>
@@ -213,7 +197,7 @@
                             <div class="member-photo">
                                 <i data-lucide="user"></i>
                             </div>
-                            <h3>Мария Сидорова</h3>
+                            <h3>Михаил Ушаков</h3>
                             <p class="member-role">CTO & Co-founder</p>
                             <p class="member-bio">Архитектор распределенных систем с опытом в Google и Яндексе. Специалист по масштабируемым решениям и криптографии.</p>
                             <div class="member-social">
@@ -226,7 +210,7 @@
                             <div class="member-photo">
                                 <i data-lucide="user"></i>
                             </div>
-                            <h3>Дмитрий Козлов</h3>
+                            <h3>Денис Тропин</h3>
                             <p class="member-role">Head of Product</p>
                             <p class="member-bio">Product manager с опытом в B2B SaaS. Ранее работал в команде продукта Zapier, глубоко понимает потребности no-code разработчиков.</p>
                             <div class="member-social">
@@ -270,34 +254,6 @@
                             <div class="member-social">
                                 <a href="#"><i data-lucide="linkedin"></i></a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h2>Инвесторы и партнеры</h2>
-                
-                <div class="investors-section">
-                    <p>APISafe поддерживают ведущие венчурные фонды и стратегические партнеры:</p>
-                    
-                    <div class="investors-grid">
-                        <div class="investor-item">
-                            <h3>Runa Capital</h3>
-                            <p>Ведущий венчурный фонд, специализирующийся на B2B SaaS и developer tools. Инвестор в GitLab, Nginx, MariaDB.</p>
-                        </div>
-                        
-                        <div class="investor-item">
-                            <h3>Flint Capital</h3>
-                            <p>Международный венчурный фонд с фокусом на кибербезопасность и enterprise software. Портфолио включает Acronis, Zeplin.</p>
-                        </div>
-                        
-                        <div class="investor-item">
-                            <h3>Phystech Ventures</h3>
-                            <p>Венчурный фонд МФТИ, инвестирующий в высокотехнологичные стартапы. Поддерживает проекты в области ИИ и безопасности.</p>
-                        </div>
-                        
-                        <div class="investor-item">
-                            <h3>Make.com</h3>
-                            <p>Стратегический партнер и инвестор. Совместно развиваем экосистему безопасных no-code решений.</p>
                         </div>
                     </div>
                 </div>
@@ -450,15 +406,12 @@
                         <h4>Поддержка</h4>
                         <a href="faq.html">FAQ</a>
                         <a href="help.html">Помощь</a>
-                        <a href="#">Статус</a>
                         <a href="contacts.html">Контакты</a>
                     </div>
                     <div class="footer-column">
                         <h4>Компания</h4>
                         <a href="about.html">О нас</a>
                         <a href="#">Блог</a>
-                        <a href="#">Карьера</a>
-                        <a href="#">Пресса</a>
                     </div>
                 </div>
             </div>
@@ -492,6 +445,32 @@
             });
         }
 
+        // Scroll to form function
+        function scrollToForm() {
+            // Проверяем, есть ли форма на текущей странице
+            const form = document.querySelector('#signupForm, .signup-form, form[name="signupForm"]');
+            
+            if (form) {
+                // Если форма найдена на текущей странице, прокручиваем к ней
+                form.scrollIntoView({ 
+                    behavior: 'smooth',
+                });
+            } else {
+                // Если формы нет, перенаправляем на главную страницу с якорем к форме
+                if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+                    window.location.href = 'index.html#signupForm';
+                } else {
+                    // Если мы уже на главной странице, но форма не найдена, попробуем найти её по другим селекторам
+                    const fallbackForm = document.querySelector('form, .form-container, #contact-form');
+                    if (fallbackForm) {
+                        fallbackForm.scrollIntoView({ 
+                            behavior: 'smooth',
+                        });
+                    }
+                }
+            }
+        }
+
         // Back to top button
         const backToTop = document.getElementById('backToTop');
         
@@ -512,4 +491,3 @@
     </script>
 </body>
 </html>
-

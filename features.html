@@ -30,7 +30,7 @@
                 <a href="contacts.html" class="nav-link">Контакты</a>
             </div>
             <div class="nav-actions">
-                <button class="btn btn-primary">Попробовать бесплатно</button>
+                <button class="btn btn-primary" onclick="scrollToForm()">Попробовать бесплатно</button>
             </div>
             <button class="mobile-menu-toggle" aria-label="Открыть меню">
                 <i data-lucide="menu"></i>
@@ -280,15 +280,12 @@
                         <h4>Поддержка</h4>
                         <a href="faq.html">FAQ</a>
                         <a href="help.html">Помощь</a>
-                        <a href="#">Статус</a>
                         <a href="contacts.html">Контакты</a>
                     </div>
                     <div class="footer-column">
                         <h4>Компания</h4>
                         <a href="about.html">О нас</a>
                         <a href="#">Блог</a>
-                        <a href="#">Карьера</a>
-                        <a href="#">Пресса</a>
                     </div>
                 </div>
             </div>
@@ -322,6 +319,32 @@
             });
         }
 
+        // Scroll to form function
+        function scrollToForm() {
+            // Проверяем, есть ли форма на текущей странице
+            const form = document.querySelector('#signupForm, .signup-form, form[name="signupForm"]');
+            
+            if (form) {
+                // Если форма найдена на текущей странице, прокручиваем к ней
+                form.scrollIntoView({ 
+                    behavior: 'smooth',
+                });
+            } else {
+                // Если формы нет, перенаправляем на главную страницу с якорем к форме
+                if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+                    window.location.href = 'index.html#signupForm';
+                } else {
+                    // Если мы уже на главной странице, но форма не найдена, попробуем найти её по другим селекторам
+                    const fallbackForm = document.querySelector('form, .form-container, #contact-form');
+                    if (fallbackForm) {
+                        fallbackForm.scrollIntoView({ 
+                            behavior: 'smooth',
+                        });
+                    }
+                }
+            }
+        }
+
         // Back to top button
         const backToTop = document.getElementById('backToTop');
         
@@ -342,4 +365,3 @@
     </script>
 </body>
 </html>
-
