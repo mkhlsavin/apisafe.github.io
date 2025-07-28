@@ -1031,3 +1031,52 @@ p {
         max-height: 85vh;
     }
 }
+
+/* Адаптивные стили для кнопки в хедере */
+@media (max-width: 768px) {
+    .nav-actions .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border-radius: 6px;
+        min-width: auto;
+        white-space: nowrap;
+    }
+    
+    .nav {
+        padding: 0.75rem 1rem;
+    }
+    
+    .nav-brand .logo {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-actions .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 5px;
+    }
+    
+    .nav {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .nav-brand .logo {
+        font-size: 1.1rem;
+    }
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 360px) {
+    .nav-actions .btn {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
+        border-radius: 4px;
+    }
+    
+    .nav {
+        padding: 0.4rem 0.5rem;
+    }
+}
